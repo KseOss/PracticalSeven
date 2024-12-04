@@ -7,52 +7,53 @@ namespace LIB7_3
         public int Age { get; set; }
         public string Gender { get; set; }
         public double Weight { get; set; }
-        public void SetParams(string name, int age, string gender, double weight) // Метод для установки всех параметров
+        public void SetParams(string name, int age, string gender, double weight) // РњРµС‚РѕРґ РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё РІСЃРµС… РїР°СЂР°РјРµС‚СЂРѕРІ
         {
-            Name = name; //Устанавливает имя
-            Age = age; //Устанавливает возраст
-            Gender = gender; //Устанавливает пол
-            Weight = weight; // Устанавлвиает возраст
+            Name = name; //РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РёРјСЏ
+            Age = age; //РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РІРѕР·СЂР°СЃС‚
+            Gender = gender; //РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РїРѕР»
+            Weight = weight; // РЈСЃС‚Р°РЅР°РІР»РІРёР°РµС‚ РІРѕР·СЂР°СЃС‚
         }
-        public void SetParams(string name, int age) //Перегруженный метод для установки только имени и возраста
+        public void SetParams(string name, int age) //РџРµСЂРµРіСЂСѓР¶РµРЅРЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё С‚РѕР»СЊРєРѕ РёРјРµРЅРё Рё РІРѕР·СЂР°СЃС‚Р°
         {
             Name = name;
             Age = age;
         }
-        public void RiseAge() //Метод на увеличение роста на 1 год
+        public void RiseAge() //РњРµС‚РѕРґ РЅР° СѓРІРµР»РёС‡РµРЅРёРµ СЂРѕСЃС‚Р° РЅР° 1 РіРѕРґ
         {
             Age++;
         }
-        public void RiseAgeTwo() //Метод на увеличение роста на 1 год
+        public void RiseAgeTwo() //РњРµС‚РѕРґ РЅР° СѓРІРµР»РёС‡РµРЅРёРµ СЂРѕСЃС‚Р° РЅР° 1 РіРѕРґ
         {
             Age++;
         }
-        public string CompareWeight(Man other)//параметр MAN other - имя параметра
+        public string CompareWeight(Man other)//РїР°СЂР°РјРµС‚СЂ MAN other - РёРјСЏ РїР°СЂР°РјРµС‚СЂР°
         {
             if (this.Weight > other.Weight)
             {
-                return $"{this.Name} тяжелее, чем {other.Name}";
+                return $"{this.Name} С‚СЏР¶РµР»РµРµ, С‡РµРј {other.Name}";
             }
             else if (this.Weight < other.Weight)
             {
-                return $"{this.Name}, легче чем {other.Name}";
+                return $"{this.Name}, Р»РµРіС‡Рµ С‡РµРј {other.Name}";
             }
-            return $"{this.Name} и {other.Name} весят одинаково";
+            return $"{this.Name} Рё {other.Name} РІРµСЃСЏС‚ РѕРґРёРЅР°РєРѕРІРѕ";
         }
         public override string ToString()
         {
-            return $"Имя: {Name}, Возраст: {Age}, Пол: {Gender}, Вес: {Weight}";
+            return $"РРјСЏ: {Name}, Р’РѕР·СЂР°СЃС‚: {Age}, РџРѕР»: {Gender}, Р’РµСЃ: {Weight}";
         }
 
-        //производный класс Student
+        //РїСЂРѕРёР·РІРѕРґРЅС‹Р№ РєР»Р°СЃСЃ Student 7 РїСЂР°РєС‚РёРєР°
 
         public class Students : Man 
         { 
-            public string Facultet {  get; set; }
-            public int Course { get; set; }
-            public string Group { get; set; }
+            public string Facultet {  get; set; } //РќР°Р·РІР°РЅРёРµ С„Р°РєСѓР»СЊС‚РµС‚Р°
+            public int Course { get; set; } //РќРѕРјРµСЂ РєСѓСЂСЃР°
+            public string Group { get; set; } //РќР°Р·РІР°РЅРёРµ РіСЂСѓРїРїС‹
 
-            //Установка параметров студента, включая параметры SetParams
+            //РџСЂРѕРїРёСЃС‹РІР°РµРј РјРµС‚РѕРґ РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё РїР°СЂР°РјРµС‚СЂРѕРІ СЃС‚СѓРґРµРЅС‚Р°, РєРѕС‚РѕСЂС‹Рµ РїСЂРёРЅРёРјР°СЋС‚ РЅРµРѕР±С…РѕРґРёРјС‹ РїР°СЂР°РјРµС‚СЂС‹ Рё РІС‹Р·С‹РІР°РµС‚ РјРµС‚РѕРґ SET PARAMS РёР· РєР»Р°СЃСЃР° Man РєРѕС‚РѕСЂС‹Р№ СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РѕР±С‰РёРµ РїР°СЂР°РјРµС‚СЂС‹
+            //РЈСЃС‚Р°РЅРѕРІРєР° РїР°СЂР°РјРµС‚СЂРѕРІ СЃС‚СѓРґРµРЅС‚Р°, РІРєР»СЋС‡Р°СЏ РїР°СЂР°РјРµС‚СЂС‹ SetParams
             public void SetStudentsParams(string name, int age, string gender, double weight, string facultet, int course, string group)
             {
                 SetParams(name, age, gender, weight);
@@ -61,25 +62,25 @@ namespace LIB7_3
                 Group = group;
             }
 
-            //Метод изменения веса студента
+            //РњРµС‚РѕРґ РёР·РјРµРЅРµРЅРёСЏ РІРµСЃР° СЃС‚СѓРґРµРЅС‚Р°
             public void NewWeight(double newWeight)
             {
                 Weight = newWeight;
             }
-            //Метод для перехода на следующий курс
+            //РњРµС‚РѕРґ РґР»СЏ РїРµСЂРµС…РѕРґР° РЅР° СЃР»РµРґСѓСЋС‰РёР№ РєСѓСЂСЃ
             public void NextCourse()
             {
                 Course++;
             }
-            //Метод для изменения группы студента
+            //РњРµС‚РѕРґ РґР»СЏ РёР·РјРµРЅРµРЅРёСЏ РіСЂСѓРїРїС‹ СЃС‚СѓРґРµРЅС‚Р°
             public void NewGroup(string newGroup)
             {
                 Group = newGroup;
             }
-            //Переопределение метода для вывода информации о студенте
+            //РџРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РјРµС‚РѕРґР° РґР»СЏ РІС‹РІРѕРґР° РёРЅС„РѕСЂРјР°С†РёРё Рѕ СЃС‚СѓРґРµРЅС‚Рµ
             public override string ToString()
             {
-                return base.ToString() + $" Факультет - {Facultet}, Курс - {Course} Группа - {Group}";
+                return base.ToString() + $" Р¤Р°РєСѓР»СЊС‚РµС‚ - {Facultet}, РљСѓСЂСЃ - {Course} Р“СЂСѓРїРїР° - {Group}";
             }
         }
     }
